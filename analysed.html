@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Selection</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0fff0;
+    }
+    .navbar {
+      background-color: #355e3b;
+    }
+    .navbar-brand, .nav-link, .btn {
+      color: white !important;
+    }
+    .container {
+      max-width: 800px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Smart Crop Advisor</a>
+    <div class="d-flex ms-auto">
+      <a href="nav.html" class="btn btn-outline-light me-2">Home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h2 class="text-center text-success mb-4">Crop Selection</h2>
+  <form action="analysis.php" method="POST">
+    <div class="mb-3">
+      <label for="crop" class="form-label">Choose Crop</label>
+      <select class="form-select" name="crop" required>
+        <option value="" selected disabled>Choose crop</option>
+        <option value="wheat">Wheat</option>
+        <option value="rice">Rice</option>
+        <option value="corn">Corn</option>
+        <option value="sugarcane">Sugarcane</option>
+        <option value="cotton">Cotton</option>
+        <option value="soybean">Soybean</option>
+        <option value="barley">Barley</option>
+        <option value="potatoes">Potatoes</option>
+        <option value="tomatoes">Tomatoes</option>
+        <option value="onions">Onions</option>
+        <option value="carrots">Carrots</option>
+        <option value="peas">Peas</option>
+        <option value="spinach">Spinach</option>
+        <option value="chickpeas">Chickpeas</option>
+        <option value="lentils">Lentils</option>
+        <option value="mustard">Mustard</option>
+        <option value="groundnuts">Groundnuts</option>
+        <option value="bananas">Bananas</option>
+        <option value="apples">Apples</option>
+        <option value="grapes">Grapes</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="soil" class="form-label">Soil Type</label>
+      <select class="form-select" name="soil" required>
+        <option value="" selected disabled>Choose soil</option>
+        <option value="loamy">Loamy</option>
+        <option value="clayey">Clayey</option>
+        <option value="alluvial">Alluvial</option>
+        <option value="sandy">Sandy</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="weather" class="form-label">Weather Condition</label>
+      <select class="form-select" name="weather" required>
+        <option value="" selected disabled>Choose weather</option>
+        <option value="cold">Cold</option>
+        <option value="hot">Hot</option>
+        <option value="humid">Humid</option>
+        <option value="dry">Dry</option>
+        <option value="rainy">Rainy</option>
+        <option value="warm">Warm</option>
+        <option value="cool">Cool</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Analyze</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - CropCycle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- If you want to include nav.html from PHP in HTML file, you'll need to convert this back to PHP.
+       Or copy nav.html code directly here -->
+  <!-- Example (static include): -->
+  <nav class="sticky top-0 z-50 bg-gray-800 text-white shadow-md px-8 py-4 flex justify-between items-center">
+    <a href="index.php" class="text-lime-400 text-xl font-bold">🌾 CropCycle</a>
+    <ul class="flex gap-6 items-center">
+      <li><a href="index.php" class="hover:text-lime-400">Home</a></li>
+      <li><a href="upload.php" class="hover:text-lime-400">Upload</a></li>
+      <li><a href="analysis.php" class="hover:text-lime-400">Analysis</a></li>
+      <li><a href="report.php" class="hover:text-lime-400">Report</a></li>
+      <li><a href="signup.html" class="border border-lime-400 px-4 py-1 rounded-full hover:bg-lime-400 hover:text-gray-900 transition">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="min-h-screen py-16 px-6 flex items-center justify-center">
+    <div class="max-w-4xl mx-auto bg-gray-800 p-10 rounded-xl shadow-lg border border-gray-700">
+      <h2 class="text-4xl font-bold text-lime-400 mb-6 border-b border-gray-600 pb-2">About This Project</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        The <span class="text-lime-400 font-semibold">CropCycle</span> project harnesses satellite-based multi-temporal data to analyze and extract patterns in crop growth cycles.
+        This cutting-edge approach contributes to improved <span class="text-lime-400 font-semibold">precision agriculture</span>, sustainable farming practices, and more accurate seasonal forecasting.
+        <br><br>
+        By integrating geospatial datasets and analytical tools, this project provides actionable insights into <span class="text-lime-300">cropping patterns, irrigation sources, land holdings</span>, and the depth of wells in different regions of the country.
+      </p>
+
+      <div class="mt-8">
+        <h3 class="text-2xl font-semibold text-white mb-3">Key Features:</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
+          <li>Analysis of multi-season satellite imagery</li>
+          <li>Data on landholding and cropping patterns</li>
+          <li>Visualization and report generation tools</li>
+          <li>Support for data uploads and analytics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crop Types</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #2d2d2d;
+      color: #fff;
+    }
+
+    h1.heading {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 40px;
+      color: #98db1f;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      padding: 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid-link {
+      text-decoration: none;
+    }
+
+    .grid-box {
+      background-color: #000;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      padding: 30px 20px;
+      font-weight: 500;
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 5px rgba(255,255,255,0.2);
+      overflow: hidden;
+    }
+
+    .grid-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.2) 100%);
+      transform: skewX(-45deg);
+      transition: left 0.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .grid-box:hover::before {
+      left: 100%;
+    }
+
+    .grid-link:hover .grid-box {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px #fff;
+      z-index: 2;
+    }
+
+    .grid-box h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #98db1f;
+      position: relative;
+      z-index: 2;
+    }
+
+    .grid-box p {
+      margin: 5px 0 0;
+      font-size: 15px;
+      color: #ccc;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Background image styles */
+    .rice-box {
+      background-image: url('https://wallpapers.com/images/hd/rice-background-wqjdq3dvpktg1fal.jpg');
+    }
+
+    .maize-box {
+      background-image: url('https://www.tastingtable.com/img/gallery/can-eating-raw-corn-make-you-sick/l-intro-1677081861.jpg');
+    }
+
+    .groundnut-box {
+      background-image: url('https://www.netmeds.com/images/cms/wysiwyg/blog/2019/10/Groundnut_big_2.jpg');
+    }
+
+    .sugarcane-box {
+      background-image: url('https://plantly.io/wp-content/uploads/2023/12/var.webp');
+    }
+
+    .sunhemp-box {
+      background-image: url('https://th.bing.com/th/id/OIP.0c1VcOYxmm4_RESO6HuG_QHaFj?rs=1&pid=ImgDetMain');
+    }
+
+    .rubber-box {
+      background-image: url('https://i.ytimg.com/vi/Z5BjX1YYIr0/maxresdefault.jpg');
+    }
+
+    .cotton-box {
+      background-image: url('https://th.bing.com/th/id/OIP.2Nev605ZSesf-tZh4RhAXAHaE6?rs=1&pid=ImgDetMain');
+    }
+
+    /* New Wheat box */
+    .wheat-box {
+      background-image: url('https://th.bing.com/th/id/OIP.y6oUhJ6r9okuSorAXD3pJAHaE8?rs=1&pid=ImgDetMain');
+    }
+
+    .rice-box, .maize-box, .groundnut-box, .sugarcane-box, .sunhemp-box, .rubber-box, .cotton-box, .wheat-box {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .rice-box::before,
+    .maize-box::before,
+    .groundnut-box::before,
+    .sugarcane-box::before,
+    .sunhemp-box::before,
+    .rubber-box::before,
+    .cotton-box::before,
+    .wheat-box::before {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .rice-box h3, .rice-box p,
+    .maize-box h3, .maize-box p,
+    .groundnut-box h3, .groundnut-box p,
+    .sugarcane-box h3, .sugarcane-box p,
+    .sunhemp-box h3, .sunhemp-box p,
+    .rubber-box h3, .rubber-box p,
+    .cotton-box h3, .cotton-box p,
+    .wheat-box h3, .wheat-box p {
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="heading">Crop Types</h1>
+
+  <div class="grid-container">
+    <a href="Rice.html" class="grid-link">
+      <div class="grid-box rice-box">
+        <h3>Rice</h3>
+        <p>Cereal crop</p>
+      </div>
+    </a>
+    
+    <a href="Maize.html" class="grid-link">
+      <div class="grid-box maize-box">
+        <h3>Maize</h3>
+        <p>Cereal and industrial crop</p>
+      </div>
+    </a>
+
+    <a href="Cotton.html" class="grid-link">
+      <div class="grid-box cotton-box">
+        <h3>Cotton</h3>
+        <p>Fibre crop</p>
+      </div>
+    </a>
+
+    <a href="Rubber.html" class="grid-link">
+      <div class="grid-box rubber-box">
+        <h3>Rubber</h3>
+        <p>Rubber crop</p>
+      </div>
+    </a>
+
+    <a href="Wheat.html" class="grid-link">
+      <div class="grid-box wheat-box">
+        <h3>Wheat</h3>
+        <p>Cereal crop</p>
+      </div>
+    </a>
+
+    <a href="Sugarcane.html" class="grid-link">
+      <div class="grid-box sugarcane-box">
+        <h3>Sugarcane</h3>
+        <p>Sugar crop</p>
+      </div>
+    </a>
+
+    <a href="Groundnut.html" class="grid-link">
+      <div class="grid-box groundnut-box">
+        <h3>Groundnut</h3>
+        <p>Oilseed crop</p>
+      </div>
+    </a>
+
+    <a href="Sunhemp.html" class="grid-link">
+      <div class="grid-box sunhemp-box">
+        <h3>Sunhemp</h3>
+        <p>Green manure crop</p>
+      </div>
+    </a>
+  </div>
+
+</body>
+</html>

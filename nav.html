@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CropCycle Navigation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .info-section {
+  padding: 60px 40px;
+  background-color: #1e1e2f;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.info-box {
+  background-color: #111827;
+  border: 2px solid #98db1f;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  color: #eee;
+  box-shadow: 0 0 15px rgba(152, 219, 31, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(152, 219, 31, 0.4);
+}
+
+.info-box h2 {
+  color: #98db1f;
+  margin-bottom: 20px;
+}
+
+.info-box ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+.info-box li {
+  margin-bottom: 10px;
+}
+    /* Footer styles */
+    .footer {
+      background-color: #17175c;
+      padding: 40px 0;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+      margin: 20px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li a {
+      font-size: 14px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #98db1f;
+      padding-left: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #2d2d2d;
+      color: #fff;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #111827;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #98db1f !important;
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #98db1f;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #98db1f !important;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .logout-btn {
+      padding: 8px 16px;
+      background-color: transparent;
+      border: 2px solid #98db1f;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .logout-btn:hover {
+      background-color: #98db1f;
+      color: #111827;
+    }
+
+    footer {
+      background-color: #111827;
+      color: #ccc;
+      padding: 20px 40px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #98db1f;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 60px;
+    }
+
+    .grid-box {
+      background-color: black;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .grid-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4) 0%, transparent 50%, rgba(255,255,255,0.4) 100%);
+      transform: skewX(-45deg);
+      transition: left 0.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .grid-box:hover::before {
+      left: 100%;
+    }
+
+    .grid-box:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px #fff;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Box backgrounds */
+    .grid-box:nth-child(1) {
+      background-image: url('https://th.bing.com/th/id/OIP.wIGLk6nxRtCqyj3nrM9nUgHaE6?rs=1&pid=ImgDetMain');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .grid-box:nth-child(2) {
+      background-image: url('https://th.bing.com/th/id/OIP.QXYu8JqMdwfnNnAlDTuoGQHaFN?rs=1&pid=ImgDetMain');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .grid-box:nth-child(3) {
+      background-image: url('https://th.bing.com/th/id/OIP.Noxbpl_JA_jMUBJ1xC4ifAHaE8?rs=1&pid=ImgDetMain');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .grid-box:nth-child(4) {
+      background-image: url('https://c8.alamy.com/comp/TTTT2H/aerial-view-of-colorful-land-pattern-bolivia-TTTT2H.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .grid-box:nth-child(5) {
+      background-image: url('https://livingcolorgardencenter.net/wp-content/uploads/2019/01/blue-fertilizer.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .grid-box:nth-child(6) {
+      background-image: url('https://zimiorganics.com/blog/images/12.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .welcome-title {
+      color: #98db1f;
+      overflow: hidden; /* Hide the initial text */
+      white-space: nowrap; /* Prevent wrapping */
+      animation: typewriter 2s steps(17) 0.5s forwards; /* Adjust steps based on word count */
+    }
+
+    .welcome-title span {
+      opacity: 0;
+      animation: fadeInWord 0.3s linear forwards;
+    }
+    .lead mb-4 welcome-text{
+      text-align: center;
+    }
+
+    .welcome-title span:nth-child(1) { animation-delay: 0.5s; }
+    .welcome-title span:nth-child(2) { animation-delay: 0.8s; }
+    .welcome-title span:nth-child(3) { animation-delay: 1.1s; }
+    /* Add more span nth-child rules for each word with increasing delay */
+    .welcome-title span:nth-child(4) { animation-delay: 1.4s; }
+    .welcome-title span:nth-child(5) { animation-delay: 1.7s; }
+
+    @keyframes typewriter {
+      to {
+        width: 100%; /* Expand to show all words */
+      }
+    }
+
+    @keyframes fadeInWord {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .welcome-text {
+      color: #ccc;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 2.5s forwards; /* Adjust delay to start after title */
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.php">🌾 CropSense</a>
+    <div class="collapse navbar-collapse show justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="nav.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="upload.php">Upload</a></li>
+        <li class="nav-item"><a class="nav-link" href="analysed.html">Analysis</a></li>
+        <li class="nav-item"><a class="nav-link" href="report-page.php">Report</a></li>
+        <li class="nav-item">
+          <a href="login.html" class="logout-btn">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ 
+
+  <div class="grid-container">
+    <a href="first.html" class="grid-box">CROP</a>
+    <a href="second.html" class="grid-box">WEATHER</a>
+    <a href="third.html" class="grid-box">IRRIGATION</a>
+    <a href="fourth.html" class="grid-box">LAND-PATTERN</a>
+    <a href="fifth.html" class="grid-box">FERTILIZERS</a>
+    <a href="sixth.html" class="grid-box">CULTIVATION-TECHNIQUE</a>
+  </div>
+<!-- ADDITIONAL CONTENT -->
+<div class="info-section">
+  <div class="info-box">
+    <h2>🌱 Crop Overview</h2>
+    <p>Crops are cultivated plants that provide food, fiber, fuel, and raw materials. India hosts a wide variety of crops thanks to its diverse climate and topography. These crops are primarily categorized as:</p>
+    <ul>
+      <li><strong>Kharif Crops:</strong> Sown with the beginning of monsoon (June–July) and harvested by September–October (e.g., rice, maize, cotton).</li>
+      <li><strong>Rabi Crops:</strong> Grown in winter (October–December) and harvested in spring (March–April), like wheat, barley, and mustard.</li>
+      <li><strong>Zaid Crops:</strong> Cultivated between Rabi and Kharif (e.g., watermelon, cucumber).</li>
+    </ul>
+  </div>
+
+  <div class="info-box">
+    <h2>🧩 Cropping Patterns in India</h2>
+    <p>Cropping pattern refers to the type and sequence of crops grown on a particular land. Understanding these patterns helps improve productivity, soil health, and water management. Common patterns include:</p>
+    <ul>
+      <li><strong>Monocropping:</strong> Growing the same crop year after year.</li>
+      <li><strong>Mixed Cropping:</strong> Cultivating two or more crops simultaneously on the same land.</li>
+      <li><strong>Crop Rotation:</strong> Alternating crops in a planned sequence to preserve soil nutrients.</li>
+      <li><strong>Intercropping:</strong> Growing two or more crops together with specific spacing arrangements.</li>
+    </ul>
+  </div>
+</div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="#">Our services</a></li>
+          <li><a href="contact.php">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="plan.html">Payment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/lpuuniversity/">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/school/lovely-professional-university/posts/?feedView=all">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

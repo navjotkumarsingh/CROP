@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+    <style>
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp2916561.jpg');
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-box {
+            width: 350px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 5px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .signup-box p {
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .signup-box input[type="text"],
+        .signup-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #98db1f;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .signup-box button span {
+            background: #98db1f;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .signup-box button:hover span {
+            width: 100%;
+        }
+
+        .signup-box button:hover {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box">
+        <img src="logo.png" alt="Avatar" class="avatar">
+        <h1>Signup</h1>
+        <form action="signup.php" method="POST">
+
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <button type="submit"><span></span>Sign up</button>
+        </form>
+    </div>
+</body>
+</html>

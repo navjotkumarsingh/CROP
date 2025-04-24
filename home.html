@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropSense</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding-top: 100px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-color: #1a1a2e;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #98db1f;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 60px;
+            cursor: pointer;
+        }
+
+        .heading h2 {
+            font-size: 28px;
+            margin-left: 15px;
+        }
+
+        .navbar .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            padding: 100px 20px 20px;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            margin-top: 30px;
+        }
+
+        .content p {
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+        .cta-button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #98db1f;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.cta-button span {
+    background: #98db1f;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+.cta-button:hover span {
+    width: 100%;
+}
+
+.cta-button:hover {
+    color: #1a1a2e;
+    background-color: #98db1f;
+    border-color: #98db1f;
+}
+        .footer {
+            background-color: #17175c;
+            padding: 40px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li a {
+            font-size: 14px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            transition: all 0.3s ease;
+        }
+        .heading h2 {
+    color: #1a1a2e;
+}
+
+        .footer-col ul li a:hover {
+            color: #98db1f;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="logo.png" class="logo" alt="CropSense Logo">
+            <div class="heading">
+                <h2 >CropSense</h2>
+            </div>
+        </div>
+        
+    </div>
+    <div class="banner">
+        <div class="content">
+            
+            <h1>EXTRACTION OF CROP CYCLE PARAMETERS FROM <br>MULTI-TEMPORAL DATA WITH CropSense</h1>
+            <p>A personal Crop management tool</p>
+            <div>
+                <a href="signup.html" target="_blank">
+                    <button class="cta-button"><span></span>Sign up</button>
+                </a>
+                <a href="login.html" target="_blank">
+                    <button class="cta-button"><span></span>Log in</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Our services</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Return</a></li>
+                    <li><a href="#">Order status</a></li>
+                    <li><a href="#">Payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
